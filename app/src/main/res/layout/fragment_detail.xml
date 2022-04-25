@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:orientation="vertical"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/album_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="앨범명"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/album_name_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:text="IU 5th Album 'LILAC'"
+                app:layout_constraintStart_toEndOf="@+id/album_name"
+                app:layout_constraintTop_toTopOf="@+id/album_name" />
+
+            <TextView
+                android:id="@+id/artist_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="아티스트"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/album_name"
+                app:layout_constraintTop_toBottomOf="@+id/album_name" />
+
+            <TextView
+                android:id="@+id/artist_name_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아이유 (IU)"
+                app:layout_constraintStart_toStartOf="@+id/album_name_detail"
+                app:layout_constraintTop_toTopOf="@+id/artist_name" />
+
+            <TextView
+                android:id="@+id/publisher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="발매사"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/artist_name"
+                app:layout_constraintTop_toBottomOf="@+id/artist_name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="카카오엔터테인먼트"
+                app:layout_constraintStart_toStartOf="@+id/album_name_detail"
+                app:layout_constraintTop_toTopOf="@+id/publisher" />
+
+            <TextView
+                android:id="@+id/agency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="기획사"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/publisher"
+                app:layout_constraintTop_toBottomOf="@+id/publisher" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EDAM엔터테인먼트"
+                app:layout_constraintStart_toStartOf="@+id/album_name_detail"
+                app:layout_constraintTop_toTopOf="@+id/agency" />
+
+            <TextView
+                android:id="@+id/album_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="앨범정보"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/agency"
+                app:layout_constraintTop_toBottomOf="@+id/agency" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="'아이유(IU)' 정규 5집 [LILAC]\n\n&quot;안녕 꽃잎 같은 안녕&quot;\n&quot;내 맘에 아무 의문이 없어 난 이 다음으로 가요&quot;
+        \n\n아이유가 짱이다.아이유가 짱이다.아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n
+아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n아이유가 짱이다아이유가 짱이다아이유가 짱이다.\n"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/album_information"
+                app:layout_constraintTop_toBottomOf="@+id/album_information" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
