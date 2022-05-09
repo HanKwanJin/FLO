@@ -5,13 +5,18 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flo.databinding.ItemSongBinding
 
-class SaveRVAdapter(private val albumList: ArrayList<Album>): RecyclerView.Adapter<SaveRVAdapter.ViewHolder>() {
+class SaveRVAdapter(private val albumList: ArrayList<Song>): RecyclerView.Adapter<SaveRVAdapter.ViewHolder>() {
     interface MyItemClickListener{
         fun onRemoveAlbum(position: Int)
     }
     private lateinit var myItemClickListener: MyItemClickListener
     fun setMyItemClickListener(itemClickListener: MyItemClickListener){
         myItemClickListener = itemClickListener
+    }
+    fun addSongs(songs: ArrayList<Song>){
+        this.albumList.clear()
+        this.albumList.addAll(songs)
+        notifyDataSetChanged()
     }
     fun removeItem(position: Int){
         albumList.removeAt(position)
@@ -31,10 +36,10 @@ class SaveRVAdapter(private val albumList: ArrayList<Album>): RecyclerView.Adapt
 
     override fun getItemCount(): Int = albumList.size
     inner class ViewHolder(val binding: ItemSongBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(album: Album){
-            binding.songTitleTv.text = album.title
-            binding.songSingerTv.text = album.singer
-            binding.songCoverImg.setImageResource(album.coverImg!!)
+        fun bind(song: Song){
+            binding.songTitleTv.text = song.title
+            binding.songSingerTv.text = song.singer
+            binding.songCoverImg.setImageResource(song.coverImg!!)
         }
     }
 }
