@@ -27,7 +27,15 @@ class SaveFragment:Fragment() {
     }
     private fun initRecyclerView(){
         binding.saveRv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        val songRVAdapter = SaveRVAdapter()
+        songRVAdapter.setMyItemClickListener(object : SaveRVAdapter.MyItemClickListener{
+            override fun onRemoveSong(songId: Int) {
+                songDB.songDao().updateIsLikeById(false, songId)
+            }
 
+        })
+        binding.saveRv.adapter = songRVAdapter
+        songRVAdapter.addSongs(songDB.songDao().getLikedSongs(true) as ArrayList<Song>)
 
     }
 }
