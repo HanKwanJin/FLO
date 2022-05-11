@@ -13,6 +13,7 @@ import com.google.gson.Gson
 class HomeFragment : Fragment() {
 
     lateinit var binding: FragmentHomeBinding
+    private lateinit var songDB: SongDatabase
     private var albumDatas = ArrayList<Album>()
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,12 +22,8 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        albumDatas.apply {
-            add(Album("Butter", "방탄소년단 (BTS)", R.drawable.img_album_exp))
-            add(Album("Lilac", "아이유 (IU)", R.drawable.img_album_exp2))
-            add(Album("Savage", "에스파 (AESPA)", R.drawable.img_album_exp3))
-            add(Album("Invu", "태연", R.drawable.img_album_exp4))
-        }
+        songDB = SongDatabase.getInstance(requireContext())!!
+        albumDatas.addAll(songDB.albumDao().getAlbums())
 
         val albumRVAdapter = AlbumRVAdapter(albumDatas)
         binding.homeTodayMusicAlbumRv.adapter = albumRVAdapter
