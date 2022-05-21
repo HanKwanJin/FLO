@@ -30,7 +30,7 @@ class SaveRVAdapter(): RecyclerView.Adapter<SaveRVAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: SaveRVAdapter.ViewHolder, position: Int) {
         holder.bind(songs[position])
-        holder.binding.songMoreIb.setOnClickListener {
+        holder.binding.itemSongMoreIv.setOnClickListener {
             myItemClickListener.onRemoveSong(songs[position].id)
             removeSong(position)
         }
@@ -39,9 +39,9 @@ class SaveRVAdapter(): RecyclerView.Adapter<SaveRVAdapter.ViewHolder>() {
     override fun getItemCount(): Int = songs.size
     inner class ViewHolder(val binding: ItemSongBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(song: Song){
-            binding.songTitleTv.text = song.title
-            binding.songSingerTv.text = song.singer
-            binding.songCoverImg.setImageResource(song.coverImg!!)
+            binding.itemSongTitleTv.text = song.title
+            binding.itemSongSingerTv.text = song.singer
+            binding.itemSongImgIv.setImageResource(song.coverImg!!)
         }
     }
 }

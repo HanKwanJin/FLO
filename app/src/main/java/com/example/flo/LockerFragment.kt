@@ -38,13 +38,13 @@ class LockerFragment : Fragment() {
         super.onStart()
         initViews()
     }
-    private fun getJwt():Int{
+    private fun getJwt(): String{
         val spf = activity?.getSharedPreferences("auth", AppCompatActivity.MODE_PRIVATE)
-        return spf!!.getInt("jwt",0)
+        return spf!!.getString("jwt","")!!
     }
     private fun initViews(){
-        val jwt: Int = getJwt()
-        if (jwt == 0){
+        val jwt: String = getJwt()
+        if (jwt == ""){
             binding.lockerLoginTv.text = "로그인"
             binding.lockerLoginTv.setOnClickListener {
                 startActivity(Intent(activity, LoginActivity::class.java))

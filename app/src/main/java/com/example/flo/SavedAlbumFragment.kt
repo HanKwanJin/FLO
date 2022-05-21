@@ -48,11 +48,11 @@ class SavedAlbumFragment : Fragment() {
         albumRVAdapter.addAlbums(albumDB.albumDao().getLikedAlbums(getJwt()) as ArrayList)
     }
 
-    private fun getJwt() : Int {
+    private fun getJwt() : String {
         val spf = activity?.getSharedPreferences("auth" , AppCompatActivity.MODE_PRIVATE)
-        val jwt = spf!!.getInt("jwt", 0)
+        val jwt = spf!!.getString("jwt", "")
         Log.d("MAIN_ACT/GET_JWT", "jwt_token: $jwt")
 
-        return jwt
+        return jwt.toString()
     }
 }
